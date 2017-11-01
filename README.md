@@ -1,6 +1,6 @@
 # iFood Backend Advanced Test
 
-Create a micro-service able to accept RESTful requests receiving as parameter either city name or lat long coordinates and returns a playlist (only track names is fine) suggestion according to the current temperature.
+Micro-service that accepts RESTful requests receiving as parameter either city name or lat long coordinates and returns a playlist (only track names is fine) suggestion according to the current temperature.
 
 ## Business rules
 
@@ -15,12 +15,15 @@ You can make usage of OpenWeatherMaps API (https://openweathermap.org) to fetch 
 
 ## Non functional requirements
 
-As this service will be a worldwide success,it must be prepared to be fault tolerant,responsive and resilient.
+As this service will be a worldwide success, it is prepared to be fault tolerant,responsive and resilient.
 
-Use whatever language, tools and frameworks you feel comfortable to. 
+Solution, architecture details, choice of patterns and frameworks are detailed on each README.
 
-Also, briefly elaborate on your solution, architecture details, choice of patterns and frameworks.
 
-Fork this repository and submit your code.
+# Instructions
 
- 
+In this project we have 2 folders.
+
+Please first run the gateway-app with the instructions located on inner gateway-app/README.MD
+
+Second run the microservice with the instructions located on inner microservice/README.MD
