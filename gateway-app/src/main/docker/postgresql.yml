@@ -1,0 +1,11 @@
+version: '2'
+services:
+    gatewayapp-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/gatewayapp/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=gatewayapp
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
