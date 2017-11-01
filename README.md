@@ -37,7 +37,7 @@ Three mains top layers compose this project:
     
 # API's Documentation
 
-The API's documentation can be found on http://localhost:8080/doc and was made using Swagger when the server (gateway-app) is up.
+The API's documentation can be found on http://localhost:8080/api and was made using Swagger when the server (gateway-app) is up.
 
 # Endpoints
     http://localhost:8080/sugestions?city=Campinas
