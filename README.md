@@ -41,5 +41,7 @@ The API's documentation can be found on http://localhost:8080/api and was made u
 
 # Endpoints
     http://localhost:8080/sugestions?city=Campinas
-    http://localhost:8080/sugestions?lat=-15.9204&lon=-44.12
+    http://localhost:8080/sugestions?lat=-22.909883&lon=-47.062581
+    
+    
     
