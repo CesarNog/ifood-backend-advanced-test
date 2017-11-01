@@ -23,20 +23,23 @@ Please first run the gateway-app with the instructions located on inner gateway-
 Second run the microservice with the instructions located on inner microservice/README.MD
 
 
-# About the Project
+# About this Project
 
 Three mains top layers compose this project:
     Controller: API gateway - gets incoming requests
     Service: Business layer - handles business rules
     Network: Communication layer, calls external APIs for the suggestion engine
 
-
 # Required tools
     JDK 8.0 (or higher)
     Maven 3.5.0 (or higher)
     Eclipse Oxygen (Optional)
+    
+# API's Documentation
+
+The API's documentation can be found on http://localhost:8080/doc and was made using Swagger when the server (gateway-app) is up.
 
 # Endpoints
     http://localhost:8080/sugestions?city=Campinas
     http://localhost:8080/sugestions?lat=-15.9204&lon=-44.12
-
+    
