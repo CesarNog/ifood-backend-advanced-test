@@ -2,8 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    GatewayappSharedLibsModule,
-    GatewayappSharedCommonModule,
+    GatewayAppSharedLibsModule,
+    GatewayAppSharedCommonModule,
     CSRFService,
     AuthServerProvider,
     AccountService,
@@ -18,8 +18,8 @@ import {
 
 @NgModule({
     imports: [
-        GatewayappSharedLibsModule,
-        GatewayappSharedCommonModule
+        GatewayAppSharedLibsModule,
+        GatewayAppSharedCommonModule
     ],
     declarations: [
         JhiLoginModalComponent,
@@ -38,7 +38,7 @@ import {
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
-        GatewayappSharedCommonModule,
+        GatewayAppSharedCommonModule,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe
@@ -46,4 +46,4 @@ import {
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class GatewayappSharedModule {}
+export class GatewayAppSharedModule {}

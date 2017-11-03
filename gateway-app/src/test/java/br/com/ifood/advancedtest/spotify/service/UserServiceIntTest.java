@@ -1,6 +1,6 @@
 package br.com.ifood.advancedtest.spotify.service;
 
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import br.com.ifood.advancedtest.spotify.config.Constants;
 import br.com.ifood.advancedtest.spotify.domain.User;
 import br.com.ifood.advancedtest.spotify.repository.UserRepository;
@@ -31,7 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see UserService
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 @Transactional
 public class UserServiceIntTest {
 

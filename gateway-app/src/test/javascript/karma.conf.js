@@ -72,14 +72,7 @@ module.exports = (config) => {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['ChromiumHeadlessNoSandbox'],
-
-        customLaunchers: {
-            ChromiumHeadlessNoSandbox: {
-                base: 'ChromiumHeadless',
-                    flags: ['--no-sandbox']
-            }
-        },
+        browsers: ['ChromiumHeadless'],
 
         // Ensure all browsers can run tests written in .ts files
         mime: {

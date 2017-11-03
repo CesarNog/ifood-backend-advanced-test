@@ -24,8 +24,8 @@ eureka:
         instance-info-replication-interval-seconds: 10
         registry-fetch-interval-seconds: 10
     instance:
-        appname: gatewayapp
-        instanceId: gatewayapp:${spring.application.instance-id:${random.value}}
+        appname: gateway-app
+        instanceId: gateway-app:${spring.application.instance-id:${random.value}}
         lease-renewal-interval-in-seconds: 5
         lease-expiration-duration-in-seconds: 10
         status-page-url-path: ${management.context-path}/info
@@ -63,7 +63,7 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: gatewayapp
+        name: gateway-app
     jackson:
         serialization.write_dates_as_timestamps: false
     jpa:
@@ -113,11 +113,11 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: gatewayapp@localhost
+        from: gateway-app@localhost
     swagger:
         default-include-pattern: /api/.*
-        title: gatewayapp API
-        description: gatewayapp API documentation
+        title: gateway-app API
+        description: gateway-app API documentation
         version: 0.0.1
         terms-of-service-url:
         contact-name:

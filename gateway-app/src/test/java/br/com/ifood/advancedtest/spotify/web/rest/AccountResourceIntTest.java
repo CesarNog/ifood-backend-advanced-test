@@ -1,7 +1,6 @@
 package br.com.ifood.advancedtest.spotify.web.rest;
-
 import br.com.ifood.advancedtest.spotify.config.Constants;
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import br.com.ifood.advancedtest.spotify.domain.Authority;
 import br.com.ifood.advancedtest.spotify.domain.User;
 import br.com.ifood.advancedtest.spotify.repository.AuthorityRepository;
@@ -14,7 +13,6 @@ import br.com.ifood.advancedtest.spotify.web.rest.vm.KeyAndPasswordVM;
 import br.com.ifood.advancedtest.spotify.web.rest.vm.ManagedUserVM;
 import br.com.ifood.advancedtest.spotify.service.UserService;
 import org.apache.commons.lang3.RandomStringUtils;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,11 +28,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.Instant;
 import java.time.LocalDate;
-
 import java.util.*;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.mockito.Matchers.anyObject;
@@ -49,7 +46,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AccountResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 public class AccountResourceIntTest {
 
     @Autowired
@@ -84,9 +81,9 @@ public class AccountResourceIntTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         doNothing().when(mockMailService).sendActivationEmail(anyObject());
+
         AccountResource accountResource =
             new AccountResource(userRepository, userService, mockMailService);
-
         AccountResource accountUserMockResource =
             new AccountResource(userRepository, mockUserService, mockMailService);
         this.restMvc = MockMvcBuilders.standaloneSetup(accountResource)

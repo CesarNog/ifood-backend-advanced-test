@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
-import { GatewayappSharedModule, UserRouteAccessService } from './shared';
-import { GatewayappHomeModule } from './home/home.module';
-import { GatewayappAdminModule } from './admin/admin.module';
-import { GatewayappAccountModule } from './account/account.module';
-import { GatewayappEntityModule } from './entities/entity.module';
+import { GatewayAppSharedModule, UserRouteAccessService } from './shared';
+import { GatewayAppHomeModule } from './home/home.module';
+import { GatewayAppAdminModule } from './admin/admin.module';
+import { GatewayAppAccountModule } from './account/account.module';
+import { GatewayAppEntityModule } from './entities/entity.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -31,11 +31,11 @@ import {
         BrowserModule,
         LayoutRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
-        GatewayappSharedModule,
-        GatewayappHomeModule,
-        GatewayappAdminModule,
-        GatewayappAccountModule,
-        GatewayappEntityModule,
+        GatewayAppSharedModule,
+        GatewayAppHomeModule,
+        GatewayAppAdminModule,
+        GatewayAppAccountModule,
+        GatewayAppEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -54,4 +54,4 @@ import {
     ],
     bootstrap: [ JhiMainComponent ]
 })
-export class GatewayappAppModule {}
+export class GatewayAppAppModule {}

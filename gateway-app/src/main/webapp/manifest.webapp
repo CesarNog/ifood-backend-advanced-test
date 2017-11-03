@@ -1,6 +1,6 @@
 {
-  "name": "Gatewayapp",
-  "short_name": "Gatewayapp",
+  "name": "GatewayApp",
+  "short_name": "GatewayApp",
   "icons": [
       {
           "src": "./content/images/logo-jhipster.png",

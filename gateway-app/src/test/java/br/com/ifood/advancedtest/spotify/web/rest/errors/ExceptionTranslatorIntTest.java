@@ -1,6 +1,6 @@
 package br.com.ifood.advancedtest.spotify.web.rest.errors;
 
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ExceptionTranslator
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 public class ExceptionTranslatorIntTest {
 
     @Autowired

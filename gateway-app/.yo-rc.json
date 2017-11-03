@@ -1,13 +1,15 @@
 {
   "generator-jhipster": {
-    "applicationType": "gateway",
-    "gitHubOrganization": "CesarNog",
-    "baseName": "gatewayapp",
+    "promptValues": {
+      "packageName": "br.com.ifood.advancedtest.spotify",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.10.0",
+    "baseName": "gateway-app",
     "packageName": "br.com.ifood.advancedtest.spotify",
-    "serverPort": 8080,
-    "serviceDiscoveryType": "eureka",
+    "packageFolder": "br/com/ifood/advancedtest/spotify",
+    "serverPort": "8080",
     "authenticationType": "jwt",
-    "uaaBaseName": "../uaa",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": false,
     "websocket": false,
@@ -15,25 +17,26 @@
     "devDatabaseType": "h2Disk",
     "prodDatabaseType": "postgresql",
     "searchEngine": "elasticsearch",
-    "enableSwaggerCodegen": false,
     "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
+    "jwtSecretKey": "f7450a034a7251b3d201cf5139852f9adf69c2d1",
+    "clientFramework": "angularX",
     "useSass": true,
     "clientPackageManager": "yarn",
+    "applicationType": "gateway",
     "testFrameworks": [
       "gatling",
       "protractor"
     ],
+    "jhiPrefix": "jhi",
     "enableTranslation": true,
     "nativeLanguage": "pt-br",
     "languages": [
-      "en"
-    ],
-    "clientFramework": "angularX",
-    "jhipsterVersion": "4.10.2",
-    "packageFolder": "br/com/ifood/advancedtest/spotify",
-    "jwtSecretKey": "b8dbf386fd86d4f73b01823ac8d99cd908f040a1",
-    "jhiPrefix": "jhi"
+      "en",
+      "es",
+      "pt-br"
+    ]
   }
 }

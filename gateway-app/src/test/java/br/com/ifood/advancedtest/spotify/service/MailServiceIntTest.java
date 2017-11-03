@@ -1,7 +1,7 @@
 package br.com.ifood.advancedtest.spotify.service;
 import br.com.ifood.advancedtest.spotify.config.Constants;
 
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import br.com.ifood.advancedtest.spotify.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
@@ -30,7 +30,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 public class MailServiceIntTest {
 
     @Autowired

@@ -1,6 +1,6 @@
 package br.com.ifood.advancedtest.spotify.repository;
 
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import br.com.ifood.advancedtest.spotify.config.Constants;
 import br.com.ifood.advancedtest.spotify.config.audit.AuditEventConverter;
 import br.com.ifood.advancedtest.spotify.domain.PersistentAuditEvent;
@@ -32,7 +32,7 @@ import static br.com.ifood.advancedtest.spotify.repository.CustomAuditEventRepos
  * @see CustomAuditEventRepository
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIntTest {
 

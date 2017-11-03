@@ -17,19 +17,19 @@ eureka:
     client:
         enabled: true
     instance:
-        appname: gatewayapp
-        instanceId: gatewayapp:${spring.application.instance-id:${random.value}}
+        appname: gateway-app
+        instanceId: gateway-app:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: gatewayapp
+        name: gateway-app
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:gatewayapp;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:gateway-app;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -106,7 +106,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: b8dbf386fd86d4f73b01823ac8d99cd908f040a1
+                secret: f7450a034a7251b3d201cf5139852f9adf69c2d1
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

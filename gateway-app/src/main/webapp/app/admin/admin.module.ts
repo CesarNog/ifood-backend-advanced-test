@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { GatewayappSharedModule } from '../shared';
+import { GatewayAppSharedModule } from '../shared';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import {
@@ -34,7 +34,7 @@ import {
 
 @NgModule({
     imports: [
-        GatewayappSharedModule,
+        GatewayAppSharedModule,
         RouterModule.forRoot(adminState, { useHash: true }),
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
@@ -74,4 +74,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class GatewayappAdminModule {}
+export class GatewayAppAdminModule {}

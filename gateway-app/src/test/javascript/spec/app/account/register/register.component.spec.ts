@@ -3,7 +3,7 @@ import { Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MockLanguageService } from '../../../helpers/mock-language.service';
-import { GatewayappTestModule } from '../../../test.module';
+import { GatewayAppTestModule } from '../../../test.module';
 import { LoginModalService, EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from '../../../../../../main/webapp/app/shared';
 import { Register } from '../../../../../../main/webapp/app/account/register/register.service';
 import { RegisterComponent } from '../../../../../../main/webapp/app/account/register/register.component';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [GatewayappTestModule],
+                imports: [GatewayAppTestModule],
                 declarations: [RegisterComponent],
                 providers: [
                     Register,

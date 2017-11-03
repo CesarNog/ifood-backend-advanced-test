@@ -28,4 +28,4 @@ import { CookieModule } from 'ngx-cookie';
         InfiniteScrollModule
     ]
 })
-export class GatewayappSharedLibsModule {}
+export class GatewayAppSharedLibsModule {}

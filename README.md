@@ -12,36 +12,37 @@ Micro-service that accepts RESTful requests receiving as parameter either city n
 ## Non functional requirements
 
 As this service will be a worldwide success, it is prepared to be fault tolerant,responsive and resilient.
-
 Solution, architecture details, choice of patterns and frameworks are detailed on each README.
 
+## Main Instructions
 
-# Main Instructions
+In this project we have 2 main folders.
+Please first run the registry using ./registry/mvnw (on Windows just dir into registry and run on CMD mvnw) on a separate CMD window
+Then run the gateway-app using ./gateway-app/mvnw (on Windows just dir into gateway-app and run on CMD mvnw)on another separated window
 
-In this project we have 2 folders.
-Please first run the gateway-app with the instructions located on inner gateway-app/README.MD
-Second run the microservice with the instructions located on inner microservice/README.MD
-
-
-# About this Project
-
-Three mains top layers compose this project:
-    Controller: API gateway - gets incoming requests
-    Service: Business layer - handles business rules
-    Network: Communication layer, calls external APIs for the suggestion engine
-
-# Required tools
+## Required tools
     JDK 8.0 (or higher)
     Maven 3.5.0 (or higher)
-    Eclipse Oxygen (Optional)
+    Eclipse Oxygen
     
-# API's Documentation
+## API's Documentation
 
 The API's documentation can be found on http://localhost:8080/api and was made using Swagger when the server (gateway-app) is up.
 
-# Endpoints
-    http://localhost:8080/sugestions?city=Campinas
-    http://localhost:8080/sugestions?lat=-22.909883&lon=-47.062581
-    
-    
-    
+## Endpoints (please use with Authorization Header)
+
+    curl -X GET \
+    http://localhost:8080/api/tracks/location?lat=-22&lon=-47 \
+    -H 'accept: application/json' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxMTA1OTU2OX0.6MpynHS5qjxxcvTccJ1obekAuYHLx7z3gNFn-dmkXbtqEYZiKmTj-CMwZyF0w1evOOkcNzrN9l_b_rsfR4VIIw'
+
+    curl -X GET \
+    http://localhost:8080/api/suggestions/city/Campinas \
+    -H 'accept: application/json' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxMTA1OTU2OX0.6MpynHS5qjxxcvTccJ1obekAuYHLx7z3gNFn-dmkXbtqEYZiKmTj-CMwZyF0w1evOOkcNzrN9l_b_rsfR4VIIw'
+
+    curl -X GET \
+    http://localhost:8080/api/suggestions/city/Dois+Lajeados \
+    -H 'accept: application/json' \
+    -H 'authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUxMTA1OTU2OX0.6MpynHS5qjxxcvTccJ1obekAuYHLx7z3gNFn-dmkXbtqEYZiKmTj-CMwZyF0w1evOOkcNzrN9l_b_rsfR4VIIw'
+

@@ -1,6 +1,6 @@
 package br.com.ifood.advancedtest.spotify.web.rest;
 
-import br.com.ifood.advancedtest.spotify.GatewayappApp;
+import br.com.ifood.advancedtest.spotify.GatewayAppApp;
 import br.com.ifood.advancedtest.spotify.config.audit.AuditEventConverter;
 import br.com.ifood.advancedtest.spotify.domain.PersistentAuditEvent;
 import br.com.ifood.advancedtest.spotify.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = GatewayappApp.class)
+@SpringBootTest(classes = GatewayAppApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

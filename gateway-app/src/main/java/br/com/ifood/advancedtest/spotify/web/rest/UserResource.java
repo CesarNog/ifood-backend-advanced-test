@@ -67,19 +67,22 @@ public class UserResource {
 
     private final Logger log = LoggerFactory.getLogger(UserResource.class);
 
-    private final UserRepository userRepository;
+    private static final String ENTITY_NAME = "userManagement";
 
-    private final UserService userService;
+    private final UserRepository userRepository;
 
     private final MailService mailService;
 
+    private final UserService userService;
+
     private final UserSearchRepository userSearchRepository;
 
-    public UserResource(UserRepository userRepository, UserService userService, MailService mailService, UserSearchRepository userSearchRepository) {
+    public UserResource(UserRepository userRepository, MailService mailService,
+            UserService userService, UserSearchRepository userSearchRepository) {
 
         this.userRepository = userRepository;
-        this.userService = userService;
         this.mailService = mailService;
+        this.userService = userService;
         this.userSearchRepository = userSearchRepository;
     }
 
@@ -98,11 +101,11 @@ public class UserResource {
     @PostMapping("/users")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<User> createUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
+    public ResponseEntity createUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         log.debug("REST request to save User : {}", managedUserVM);
 
         if (managedUserVM.getId() != null) {
-            throw new BadRequestAlertException("A new user cannot already have an ID", "userManagement", "idexists");
+            throw new BadRequestAlertException("A new user cannot already have an ID", ENTITY_NAME, "idexists");
         // Lowercase the user login before comparing with database
         } else if (userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase()).isPresent()) {
             throw new LoginAlreadyUsedException();

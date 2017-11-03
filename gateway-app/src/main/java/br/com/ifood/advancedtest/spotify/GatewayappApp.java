@@ -12,10 +12,15 @@ import org.springframework.boot.actuate.autoconfigure.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
@@ -28,18 +33,18 @@ import java.util.Collection;
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
 @EnableZuulProxy
-public class GatewayappApp {
+public class GatewayAppApp extends WebMvcConfigurerAdapter {
 
-    private static final Logger log = LoggerFactory.getLogger(GatewayappApp.class);
+    private static final Logger log = LoggerFactory.getLogger(GatewayAppApp.class);
 
     private final Environment env;
 
-    public GatewayappApp(Environment env) {
+    public GatewayAppApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes gatewayapp.
+     * Initializes gateway-app.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -65,7 +70,7 @@ public class GatewayappApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(GatewayappApp.class);
+        SpringApplication app = new SpringApplication(GatewayAppApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";
@@ -89,5 +94,32 @@ public class GatewayappApp {
         log.info("\n----------------------------------------------------------\n\t" +
                 "Config Server: \t{}\n----------------------------------------------------------",
             configServerStatus == null ? "Not found or not setup for this application" : configServerStatus);
+    }
+
+    /**
+     * Declaring the static files folder as the /doc
+     *
+     * @param registry the view controller register
+     */
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/doc").setViewName("redirect:/doc/");
+        registry.addViewController("/doc/").setViewName("forward:/doc/index.html");
+        super.addViewControllers(registry);
+    }
+
+    /**
+     * Declaring the Rest Template bean to be used on the network layers
+     * <p>
+     * We should declare this bean because we must auto wire it on the network
+     * layers for test purposes
+     *
+     * @param builder the rest template builder
+     * @return a new instance of the rest template
+     */
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        // Do any additional configuration here
+        return builder.build();
     }
 }

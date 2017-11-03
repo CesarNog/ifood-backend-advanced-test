@@ -35,7 +35,7 @@ public class GatewayConfiguration {
     /**
      * Configures the Zuul filter that limits the number of API calls per user.
      * <p>
-     * This uses Bucket4J to limit the API calls, see {@link br.com.ifood.advancedtest.spotify.gateway.ratelimiting.RateLimitingFilter}.
+     * This uses Bucke4J to limit the API calls, see {@link br.com.ifood.advancedtest.spotify.gateway.ratelimiting.RateLimitingFilter}.
      */
     @Configuration
     @ConditionalOnProperty("jhipster.gateway.rate-limiting.enabled")
